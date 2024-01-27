@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Muhammad-uzair029/portfolio/static/css/main.a4e54024.css",
+    "main.js": "/Muhammad-uzair029/portfolio/static/js/main.3594d315.js",
+    "static/js/787.e6fe0fcf.chunk.js": "/Muhammad-uzair029/portfolio/static/js/787.e6fe0fcf.chunk.js",
+    "static/media/hashirshoaeb.png": "/Muhammad-uzair029/portfolio/static/media/hashirshoaeb.23e8b5a1f7de87f03d05.png",
+    "index.html": "/Muhammad-uzair029/portfolio/index.html",
+    "main.a4e54024.css.map": "/Muhammad-uzair029/portfolio/static/css/main.a4e54024.css.map",
+    "main.3594d315.js.map": "/Muhammad-uzair029/portfolio/static/js/main.3594d315.js.map",
+    "787.e6fe0fcf.chunk.js.map": "/Muhammad-uzair029/portfolio/static/js/787.e6fe0fcf.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a4e54024.css",
+    "static/js/main.3594d315.js"
+  ]
+}
