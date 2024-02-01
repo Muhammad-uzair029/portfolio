@@ -5,7 +5,7 @@ const repoURL = "Muhammad-uzair029.github.io/portfolio";
 https: ghpages.publish(
   pathname,
   {
-    branch: "master",
+    branch: "main",
     repo: repoURL,
   },
   (err) => {
