@@ -4,11 +4,11 @@ import {
   navBar,
   mainBody,
   about,
-  repos,
   leadership,
   skills,
   getInTouch,
-  experiences
+  experiences,
+  projects,
 } from "./editable-stuff/config.js";
 import MainBody from "./components/home/MainBody";
 import AboutMe from "./components/home/AboutMe";
@@ -42,27 +42,16 @@ const Home = React.forwardRef((props, ref) => {
           resume={about.resume}
         />
       )}
-      {
-        experiences.show && (
-          <Experience experiences={experiences}/>
-        )
-      }
-      {repos.show && (
-        <Project
-          heading={repos.heading}
-          username={repos.gitHubUsername}
-          length={repos.reposLength}
-          specfic={repos.specificRepos}
-        />
-      )}
-      {leadership.show && (
+      {/* {experiences.show && <Experience experiences={experiences} />} */}
+      {projects.show && <Project projects={projects} />}
+      {/* {leadership.show && (
         <Leadership
           heading={leadership.heading}
           message={leadership.message}
           img={leadership.images}
           imageSize={leadership.imageSize}
         />
-      )}
+      )} */}
       {skills.show && (
         <Skills
           heading={skills.heading}
@@ -70,7 +59,6 @@ const Home = React.forwardRef((props, ref) => {
           softSkills={skills.softSkills}
         />
       )}
-      
     </>
   );
 });

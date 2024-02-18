@@ -50,9 +50,9 @@ const about = {
   imageLink: require("../editable-stuff/pp-profile.jpeg"),
   imageSize: 375,
   message:
-    "Hello, my name is Muhammad Uzair. I'm a Full Stack Developer with a robust technical skill set, specialized in the MERN and MEAN stacks, along with proficiency in GraphQL, GCP, Shopify App development, AWS Lambdas, DynamoDB, S3, Docker, and CI/CD practices. Based in Lahore, Pakistan, I've honed my skills through diverse experiences, from developing scalable applications at SoftAims and PureLogics to enhancing cross-platform applications at Aurora Solutions. I'm passionate about leveraging technology to solve complex problems and drive business growth. In my free time, I explore new technologies and contribute to open source projects.",
+    "Hello, I am a software engineer with a strong foundation in full-stack web development, boasting 3 years of experience in crafting scalable, secure, and reliable web applications across a variety of frameworks and technologies. My journey is marked by a continuous quest for knowledge, allowing me to solve complex problems and adapt to new challenges with ease. I take pride in developing high-quality code that adheres to best practices and industry standards, ensuring that every project I undertake is executed with precision and excellence. My passion lies in turning innovative ideas into reality through meticulous coding and collaborative teamwork, always aiming to push the boundaries of what's possible in the digital world.",
   resume:
-    "https://docs.google.com/document/d/13_PWdhThMr6roxb-UFiJj4YAFOj8e_bv3Vx9UHQdyBQ/edit?usp=sharing",
+    "https://docs.google.com/document/d/10jziF7Qbd_P1SlF8JJDSCX3u6hbQyzb70Kfwi7mhu7o/edit?usp=sharing",
 };
 
 // PROJECTS SECTION
@@ -119,29 +119,31 @@ const experiences = {
     {
       role: "Software Engineer",
       company: "SoftAims",
-      companylogo: "path/to/softaims/logo", // Update with actual path if available
+      companyUrl: "https://thesoftaims.com/",
       date: "Oct 2023 - Present",
+      description:
+        "Working as a Software Engineer, I have developed and launched an innovative LinkedIn automation tool. Responsible for planning, delivering features, and fixing bugs within the project. Leading two associate software engineers in their project feature planning and time estimations, while providing them with guidelines on client communication. Embracing the company's values by introducing new ideas and creating products from scratch. Collaborating with the business team to make a positive impact on the business development side.",
     },
     {
       role: "Full Stack Engineer",
       company: "PureLogics",
-      companylogo: "path/to/purelogics/logo", // Update with actual path if available
+      companyUrl: "https://purelogics.com/",
       date: "Jun 2023 - Sep 2023",
       description:
-        "Led a team of five in developing a Shopify app and managing a Shopify store. Engaged in daily client interactions to meet project deadlines and contributed to business growth through technical interviews and strategic project management. Skills: Shopify App, MERN Stack, Software Design, Shopify.",
+        "Led a dynamic team of four, focusing on the development and management of a Shopify app and store, demonstrating commitment to product innovation and operational excellence. Responsible for planning, delivering features and fixing bugs on a project while handling Client Communication and expectations as well. Worked closely with Business Administrators on technical interviews, fostering a collaborative environment that was instrumental in driving business growth and pursuing innovation.",
     },
     {
       role: "Software Engineer",
       company: "Aurora Solutions",
-      companylogo: "path/to/aurora/solutions/logo", // Update with actual path if available
+      companyUrl: "https://www.aurorasolutions.io/",
       date: "Aug 2021 - Jun 2023",
       description:
-        "Developed efficient cross-platform applications as a core team member. Focused on creating accessible applications without currency, language, or trend barriers. Skills: Flutter, MongoDB, GCP, React.js, Node.js, GraphQL, Docker, CI/CD, Angular CLI, AWS.",
+        "Served as a Full Stack Engineer and Mobile App Developer on four fast-paced projects, developing them from scratch with a focus on product performance and security. Two of these projects received funding from Antler. Collaborated with development and testing teams to design scalable solutions, focusing on client functionality requirements. Updated old code bases to modern development standards, improving functionality and proficiently followed agile software development using tools and technologies like Trello, Shortcut, Jira, and Git.",
     },
+    // Assuming the role at MGS Apps Technology remains unchanged as it was not mentioned in the narrative
     {
       role: "Flutter Developer",
       company: "MGS Apps Technology",
-      companylogo: "path/to/mgs/apps/technology/logo", // Update with actual path if available
       date: "Jan 2021 - Jun 2021",
       description:
         "Worked as a Flutter developer focusing on Islamic apps, managed authentication and crashing issues, Firebase and Firestore operations, API integrations, and app testing on Android. Skills: Flutter, Firebase.",
@@ -149,4 +151,59 @@ const experiences = {
   ],
 };
 
-export { navBar, mainBody, about, repos, skills, leadership, getInTouch, experiences };
+const projects  = {
+  show: true,
+  heading: "Projects",
+  data:
+[
+  {
+    name: "Oryn",
+    company: "SoftAims",
+    description:
+      "Oryn is a LinkedIn automation tool tailored for agencies and sales teams. Responsible for development and launch, enhancing user engagement and simplifying activity management with features like account creation, search functionalities, campaign setup, and automated scheduling. Managed the project from requirement gathering to deployment and post-launch support. Integrated AI for personalized, context-aware professional conversations. Launched 'Business Boost' for premium users, automating engagement with targeted posts to enhance business visibility.",
+    technologies:
+      "React TS, Node TS, Postgress, AWS (EC2, RDS, S3, Elastic IP), Jenkins",
+    link: "http://app.oryn.io/",
+  },
+  {
+    name: "NameGlo",
+    company: "PureLogics",
+    description:
+      "NameGlo is an application designed to facilitate the creation of custom neon signs using both glass and LCD technologies, complete with customizable background covers. Led the development and integration of backend, frontend, and Shopify app components for the entire project. Directed a team of four developers in creation and integration of the app on Shopify. Reviewed pull requests to ensure code quality and adherence to project standards. Made critical architectural decisions and led sprint planning sessions with the client.",
+    technologies:
+      "React JS, Node JS, MongoDB, Shipment APIs, Shopify App integration",
+    link: "https://glostudio.design/",
+  },
+  {
+    name: "Kinfolk",
+    company: "Aurora Solutions",
+    description:
+      "Kinfolk, an Antler-funded project, revolutionizes employee experience platforms for HR/People teams, enhancing their impact throughout the employee lifecycle. Developed the Google Calendar Meeting feature to support various time zones and user slot availability. Deployed the back-end of this feature using Lambda functions and created the complex UI challenges with CSS.",
+    technologies:
+      "React, Node, AWS App Sync, DynamoDB, GraphQL, AWS Lambda Functions",
+    link: "https://www.kinfolkhq.com/",
+  },
+  {
+    name: "Score (NeverOffside)",
+    company: "Aurora Solutions",
+    description:
+      "Score is a football club management platform that organizes events and matches, shares news via SMS and Email, and supports web, native Android, and iOS apps. Responsible for development and integration of new features for both the web and mobile applications (Android). Integrated SMS, Email, and Stripe.",
+    technologies:
+      "React Js, Node Js, GraphQL, Postgres, Native android (Kotlin)",
+    link: "https://neveroffside.com/",
+  },
+]}
+
+
+
+export {
+  navBar,
+  mainBody,
+  about,
+  repos,
+  skills,
+  leadership,
+  getInTouch,
+  experiences,
+  projects,
+};
