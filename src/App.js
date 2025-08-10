@@ -14,7 +14,7 @@ import MainBody from "./components/home/MainBody";
 import AboutMe from "./components/home/AboutMe";
 import Project from "./components/home/Project";
 import Footer from "./components/Footer";
-import Navbar from "./components/Navbar";
+// import Navbar from "./components/Navbar";
 import Skills from "./components/home/Skills";
 // import { Blog } from "./components/blog/Blog";
 // import BlogPost from "./components/blog/BlogPost";
@@ -68,7 +68,7 @@ const App = () => {
 
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL + "/"}>
-      {navBar.show && <Navbar ref={titleRef} />}
+      {/* {navBar.show && <Navbar ref={titleRef} />} */}
       <Routes>
         <Route path="/" exact element={<Home ref={titleRef} />} />
       </Routes>

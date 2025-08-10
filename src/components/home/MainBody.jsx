@@ -16,6 +16,29 @@ const MainBody = React.forwardRef(
         className="title bg-transparent bgstyle text-light min-vh-100 d-flex align-content-center align-items-center flex-wrap m-0"
       >
         <div id="stars"></div>
+        
+        {/* Header Social Icons - Top Right */}
+        <div className="header-social-icons">
+          <a
+            href="https://github.com/Muhammad-uzair029"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="header-social-icon"
+            aria-label="GitHub Profile"
+          >
+            <i className="fab fa-github"></i>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/muhammad-uzair-b20452168/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="header-social-icon"
+            aria-label="LinkedIn Profile"
+          >
+            <i className="fab fa-linkedin"></i>
+          </a>
+        </div>
+        
         <Container className="text-center">
           <h1 ref={ref} className="display-1">
             {title}
