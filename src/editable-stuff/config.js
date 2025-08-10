@@ -16,14 +16,6 @@ const mainBody = {
       url: "https://github.com/Muhammad-uzair029",
     },
     {
-      image: "fa-facebook",
-      url: "https://www.facebook.com/profile.php?id=100009180169129",
-    },
-    {
-      image: "fa-instagram",
-      url: "https://www.instagram.com",
-    },
-    {
       image: "fa-linkedin",
       url: "https://www.linkedin.com/in/muhammad-uzair-b20452168/",
     },
@@ -85,7 +77,8 @@ const skills = {
     { name: "Frontend Development", value: 95, subSkills: ["React.js", "TypeScript", "Tailwind CSS", "Angular"] },
     { name: "Java Spring Boot", value: 90, subSkills: ["Spring Framework", "Spring Security", "Spring Data JPA", "Microservices"] },
     { name: "Backend Development", value: 90, subSkills: ["Java Spring Boot", "Node.js", "Nest.js", "API Gateway"] },
-    { name: "Programming Languages", value: 90, subSkills: ["JavaScript (Expert)", "TypeScript (Advanced)", "Python (Intermediate)", "Java"] },
+    { name: "Programming Languages", value: 90, subSkills: ["JavaScript (Expert)", "TypeScript (Advanced)", "Python (Intermediate)", "Java (Advanced)"] },
+    { name: "Frameworks & Libraries", value: 90, subSkills: ["Java Spring Boot", "React.js", "Node.js", "Nest.js", "Angular"] },
     { name: "Cloud & DevOps", value: 85, subSkills: ["AWS (EC2, RDS, S3, EventBridge, SQS)", "Docker", "CI/CD Pipelines"] },
     { name: "Databases", value: 85, subSkills: ["PostgreSQL", "DynamoDB", "Redis", "MongoDB"] },
     { name: "Mobile Development", value: 80, subSkills: ["Native Android (Kotlin)", "Flutter", "React Native"] },
@@ -101,6 +94,10 @@ const skills = {
     {
       name: "Frontend Technologies",
       skills: ["React.js", "TypeScript", "Tailwind CSS", "Angular", "Canvas API"]
+    },
+    {
+      name: "Frameworks & Libraries",
+      skills: ["Java Spring Boot", "Spring Framework", "React.js", "Node.js", "Nest.js", "Angular"]
     },
     {
       name: "Backend Technologies", 
