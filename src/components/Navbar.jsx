@@ -34,13 +34,28 @@ const Navigation = React.forwardRef((props, ref) => {
   return (
     <Navbar
       ref={navbarMenuRef}
-      className={`px-3 fixed-top  ${!isTop ? "navbar-white" : "navbar-transparent"
-        }`}
+      className="px-3 fixed-top navbar-transparent"
       expand="lg"
     >
       <Navbar.Brand className="navbar-brand" href={process.env.PUBLIC_URL + "/#home"}>
         {`${mainBody.firstName}`}
       </Navbar.Brand>
+      
+      {/* Social Media Icons - Desktop */}
+      <div className="navbar-social-icons d-none d-lg-flex">
+        {mainBody.icons.map((icon, index) => (
+          <a
+            key={index}
+            href={icon.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="navbar-social-icon"
+            aria-label={icon.image.replace('fa-', '')}
+          >
+            <i className={`fab ${icon.image}`}></i>
+          </a>
+        ))}
+      </div>
       <Navbar.Toggle aria-controls="basic-navbar-nav" className="toggler" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="navbar-nav mr-auto">
@@ -82,6 +97,22 @@ const Navigation = React.forwardRef((props, ref) => {
             </NavLink>
           )}
         </Nav>
+        
+        {/* Mobile Social Icons */}
+        <div className="navbar-social-icons d-lg-none">
+          {mainBody.icons.map((icon, index) => (
+            <a
+              key={index}
+              href={icon.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="navbar-social-icon"
+              aria-label={icon.image.replace('fa-', '')}
+            >
+              <i className={`fab ${icon.image}`}></i>
+            </a>
+          ))}
+        </div>
       </Navbar.Collapse>
     </Navbar>
   );
