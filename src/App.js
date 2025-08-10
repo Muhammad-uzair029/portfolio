@@ -14,7 +14,7 @@ import MainBody from "./components/home/MainBody";
 import AboutMe from "./components/home/AboutMe";
 import Project from "./components/home/Project";
 import Footer from "./components/Footer";
-// import Navbar from "./components/Navbar";
+import Navbar from "./components/Navbar";
 import Skills from "./components/home/Skills";
 // import { Blog } from "./components/blog/Blog";
 // import BlogPost from "./components/blog/BlogPost";
@@ -66,21 +66,9 @@ const Home = React.forwardRef((props, ref) => {
 const App = () => {
   const titleRef = React.useRef();
 
-  // Handle GitHub Pages routing
-  React.useEffect(() => {
-    // Check if we're on GitHub Pages and need to handle routing
-    if (window.location.pathname.includes('/?/')) {
-      const path = window.location.pathname.split('/?/')[1];
-      if (path) {
-        const decodedPath = decodeURIComponent(path.replace(/~and~/g, '&'));
-        window.history.replaceState(null, null, '/' + decodedPath);
-      }
-    }
-  }, []);
-
   return (
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
-      {/* {navBar.show && <Navbar ref={titleRef} />} */}
+    <BrowserRouter basename={process.env.PUBLIC_URL + "/"}>
+      {navBar.show && <Navbar ref={titleRef} />}
       <Routes>
         <Route path="/" exact element={<Home ref={titleRef} />} />
       </Routes>
