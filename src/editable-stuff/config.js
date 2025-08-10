@@ -50,7 +50,7 @@ const about = {
   imageLink: require("../editable-stuff/pp-profile.jpeg"),
   imageSize: 375,
   message:
-    "Hello, I am a software engineer with a strong foundation in full-stack web development, boasting 3 years of experience in crafting scalable, secure, and reliable web applications across a variety of frameworks and technologies. My journey is marked by a continuous quest for knowledge, allowing me to solve complex problems and adapt to new challenges with ease. I take pride in developing high-quality code that adheres to best practices and industry standards, ensuring that every project I undertake is executed with precision and excellence. My passion lies in turning innovative ideas into reality through meticulous coding and collaborative teamwork, always aiming to push the boundaries of what's possible in the digital world.",
+    "Hello, I am Muhammad Uzair, a Senior Full Stack Developer with 4.5+ years of progressive experience leading technical teams and architecting scalable cloud solutions. I have a proven track record of improving development processes by 40%, optimizing system performance, and leading junior developers. My expertise spans Java Spring Boot, React, Node.js, AWS architecture, and team leadership. I'm passionate about developing powerful Web Apps/APIs and Mobile apps, always seeking to push the boundaries of what's possible in the digital world through innovative solutions and collaborative teamwork.",
   resume:
     "https://docs.google.com/document/d/10jziF7Qbd_P1SlF8JJDSCX3u6hbQyzb70Kfwi7mhu7o/edit?usp=sharing",
 };
@@ -69,7 +69,7 @@ const leadership = {
   show: true,
   heading: "Leadership",
   message:
-    "Throughout my career, I've embraced leadership roles, successfully leading a team of five at PureLogics to develop a Shopify app and manage a Shopify store. My daily interactions with clients and proactive issue resolution have been pivotal in meeting project milestones and contributing to our business growth. My commitment extends to participating in technical interview calls, underscoring my role in fostering innovation and team collaboration.",
+    "Throughout my career, I've embraced leadership roles, successfully leading teams of 2-4 developers across multiple projects. At SoftAims, I lead two associate software engineers in project feature planning and time estimations, while providing guidelines on client communication. I've improved development processes by 40% by introducing AI tools through awareness sessions and facilitating their purchase. My commitment extends to participating in technical interviews, project demos, and kick-off meetings, underscoring my role in fostering innovation and team collaboration.",
   images: [],
   imageSize: {
     width: "615",
@@ -80,26 +80,49 @@ const leadership = {
 // SKILLS SECTION
 const skills = {
   show: true,
-  heading: "Skills",
+  heading: "Technical Skills & Expertise",
   hardSkills: [
-    { name: "MERN Stack", value: 95 },
-    { name: "MEAN Stack", value: 90 },
-    { name: "GraphQL", value: 85 },
-    { name: "Docker", value: 80 },
-    { name: "AWS", value: 85 },
-    { name: "GCP", value: 80 },
-    { name: "Shopify App Development", value: 90 },
-    { name: "CI/CD", value: 85 },
+    { name: "Frontend Development", value: 95, subSkills: ["React.js", "TypeScript", "Tailwind CSS", "Angular"] },
+    { name: "Java Spring Boot", value: 90, subSkills: ["Spring Framework", "Spring Security", "Spring Data JPA", "Microservices"] },
+    { name: "Backend Development", value: 90, subSkills: ["Java Spring Boot", "Node.js", "Nest.js", "API Gateway"] },
+    { name: "Programming Languages", value: 90, subSkills: ["JavaScript (Expert)", "TypeScript (Advanced)", "Python (Intermediate)", "Java"] },
+    { name: "Cloud & DevOps", value: 85, subSkills: ["AWS (EC2, RDS, S3, EventBridge, SQS)", "Docker", "CI/CD Pipelines"] },
+    { name: "Databases", value: 85, subSkills: ["PostgreSQL", "DynamoDB", "Redis", "MongoDB"] },
+    { name: "Mobile Development", value: 80, subSkills: ["Native Android (Kotlin)", "Flutter", "React Native"] },
+    { name: "Tools & Automation", value: 85, subSkills: ["Puppeteer", "GraphQL", "REST APIs", "Web Scraping", "Shopify App Development"] },
   ],
   softSkills: [
-    { name: "Leadership", value: 95 },
-    { name: "Problem Solving", value: 90 },
-    { name: "Project Management", value: 85 },
-    { name: "Creativity", value: 90 },
-    { name: "Adaptability", value: 95 },
-    { name: "Collaboration", value: 90 },
-    { name: "Client Engagement", value: 90 },
+    { name: "Leadership & Management", value: 95, subSkills: ["Team Leadership", "Project Management", "Client Communication"] },
+    { name: "Technical Excellence", value: 95, subSkills: ["Problem Solving", "Technical Architecture", "Code Review"] },
+    { name: "Business & Process", value: 90, subSkills: ["Business Development", "Agile Development", "Process Improvement"] },
+    { name: "Communication", value: 90, subSkills: ["Client Engagement", "Technical Interviews", "Project Demos"] },
   ],
+  skillCategories: [
+    {
+      name: "Frontend Technologies",
+      skills: ["React.js", "TypeScript", "Tailwind CSS", "Angular", "Canvas API"]
+    },
+    {
+      name: "Backend Technologies", 
+      skills: ["Java Spring Boot", "Node.js", "Nest.js", "GraphQL", "REST APIs"]
+    },
+    {
+      name: "Cloud & Infrastructure",
+      skills: ["AWS (EC2, RDS, S3, EventBridge, SQS)", "Docker", "CI/CD", "Lambda Functions"]
+    },
+    {
+      name: "Databases & Storage",
+      skills: ["PostgreSQL", "MongoDB", "DynamoDB", "Redis", "Firebase"]
+    },
+    {
+      name: "Development Tools",
+      skills: ["Git", "Jenkins", "Puppeteer", "Web Scraping", "Automation Scripts", "Shopify App Development"]
+    },
+    {
+      name: "Payment & Integration",
+      skills: ["Stripe", "Shopify APIs", "International Shipping SDKs", "SMS/Email Services"]
+    }
+  ]
 };
 
 // GET IN TOUCH SECTION
@@ -107,8 +130,8 @@ const getInTouch = {
   show: true,
   heading: "Get In Touch",
   message:
-    "I'm currently exploring new opportunities to bring my expertise in full-stack development and leadership to innovative projects. If you're interested in collaborating or if you have any questions, feel free to reach out to me.",
-  email: "muhammaduzair8805@gmail.com", // Update with your email
+    "I'm currently exploring senior engineering opportunities with international technology companies. If you're interested in collaborating or if you have any questions about my expertise in full-stack development, cloud architecture, and team leadership, feel free to reach out to me.",
+  email: "muhammaduzairse@gmail.com", // Updated with current email
 };
 
 // EXPERIENCES SECTION
@@ -117,30 +140,29 @@ const experiences = {
   heading: "Experiences",
   data: [
     {
-      role: "Software Engineer",
+      role: "Senior Software Engineer",
       company: "SoftAims",
       companyUrl: "https://thesoftaims.com/",
       date: "Oct 2023 - Present",
       description:
-        "Working as a Software Engineer, I have developed and launched an innovative LinkedIn automation tool. Responsible for planning, delivering features, and fixing bugs within the project. Leading two associate software engineers in their project feature planning and time estimations, while providing them with guidelines on client communication. Embracing the company's values by introducing new ideas and creating products from scratch. Collaborating with the business team to make a positive impact on the business development side.",
+        "Leading two associate software engineers in project feature planning and time estimations, providing guidelines on client communication. Improved development processes by 40% by introducing AI tools through awareness sessions and facilitating their purchase. Working closely with Business Administrators on technical interviews and collaborating with the business team to drive positive outcomes in business development. Taking responsibility for project demos and kick-off meetings.",
     },
     {
-      role: "Full Stack Engineer",
+      role: "Software Engineer",
       company: "PureLogics",
       companyUrl: "https://purelogics.com/",
-      date: "Jun 2023 - Sep 2023",
+      date: "Jun 2023 - Oct 2023",
       description:
-        "Led a dynamic team of four, focusing on the development and management of a Shopify app and store, demonstrating commitment to product innovation and operational excellence. Responsible for planning, delivering features and fixing bugs on a project while handling Client Communication and expectations as well. Worked closely with Business Administrators on technical interviews, fostering a collaborative environment that was instrumental in driving business growth and pursuing innovation.",
+        "Led a dynamic team of 4, focusing on development, management, and operational excellence. Responsible for project and feature time estimations, managing client communication from planning to feature delivery. Implemented AWS Lambda functions to handle back-end processes, enhancing system responsiveness and scalability. Used AWS Elastic Load Balancing to efficiently distribute incoming traffic, ensuring seamless user experiences during peak loads.",
     },
     {
       role: "Software Engineer",
       company: "Aurora Solutions",
       companyUrl: "https://www.aurorasolutions.io/",
-      date: "Aug 2021 - Jun 2023",
+      date: "Sep 2021 - May 2023",
       description:
-        "Served as a Full Stack Engineer and Mobile App Developer on four fast-paced projects, developing them from scratch with a focus on product performance and security. Two of these projects received funding from Antler. Collaborated with development and testing teams to design scalable solutions, focusing on client functionality requirements. Updated old code bases to modern development standards, improving functionality and proficiently followed agile software development using tools and technologies like Trello, Shortcut, Jira, and Git.",
+        "Served as a full stack engineer and mobile application developer on four fast-paced projects. Collaborated with development and testing teams to design scalable solutions, focusing on client functionality requirements. Responsible for the smooth deployment of web and Android applications. Developed serverless backend services using AWS Lambda and integrated them with frontend applications via API Gateway.",
     },
-    // Assuming the role at MGS Apps Technology remains unchanged as it was not mentioned in the narrative
     {
       role: "Flutter Developer",
       company: "MGS Apps Technology",
@@ -157,40 +179,58 @@ const projects  = {
   data:
 [
   {
-    name: "Oryn",
+    name: "Gov Worx Public Safety Training Platform",
     company: "SoftAims",
     description:
-      "Oryn is a LinkedIn automation tool tailored for agencies and sales teams. Responsible for development and launch, enhancing user engagement and simplifying activity management with features like account creation, search functionalities, campaign setup, and automated scheduling. Managed the project from requirement gathering to deployment and post-launch support. Integrated AI for personalized, context-aware professional conversations. Launched 'Business Boost' for premium users, automating engagement with targeted posts to enhance business visibility.",
+      "Architected the signoff engine for multiple portals and roles to signoff reports created by 911 events and officers. Responsible for managing all training events and reports section against all portals. Ensured planning and development phases for upcoming features and integrations while ensuring accessibility standards compliance. Created and enhanced the training observation feedback report system for performance evaluations. Optimized AWS EventBridge polling architecture, reducing cloud infrastructure costs.",
     technologies:
-      "React TS, Node TS, Postgress, AWS (EC2, RDS, S3, Elastic IP), Jenkins",
-    link: "http://app.oryn.io/",
+      "React TypeScript, Java SpringBoot, AWS EventBridge, SQS",
+    link: "https://govworx.ai/",
   },
   {
-    name: "NameGlo",
+    name: "ORYN Lead Generation Platform",
+    company: "SoftAims",
+    description:
+      "Managed the project from requirement gathering to deployment and post-launch support. Enhanced web scraping and crawling processes by 25% using advanced Puppeteer automation techniques. Boosted automation efficiency by 80% through successful integration of LinkedIn and Twitter APIs. Reviewed pull requests for frontend and backend to ensure smooth deployment. Made architecture decisions and participated in sprint planning with clients.",
+    technologies:
+      "React TypeScript, Node.js, Puppeteer, PostgreSQL, AWS (EC2, RDS, S3), CI/CD",
+    link: "https://oryn.io/",
+  },
+  {
+    name: "Illuscriber Clothing Measurement Extension",
+    company: "SoftAims",
+    description:
+      "Designed application architecture and established project boilerplates for pixel-perfect PSD-to-Canvas conversion. Conducted thorough reviews of client PSD files and implemented accurate canvas conversions. Led the PSD-to-canvas conversion with a focus on pixel-perfect implementation. Led development team through complex canvas implementation, achieving 100% design accuracy. Reviewed pull requests for both frontend and backend development, implementing automated deployment pipelines.",
+    technologies:
+      "React TypeScript, Node.js, Canvas API, PostgreSQL, AWS",
+    link: "https://illuscriber.com/",
+  },
+  {
+    name: "NameGlo E-commerce Platform",
     company: "PureLogics",
     description:
-      "NameGlo is an application designed to facilitate the creation of custom neon signs using both glass and LCD technologies, complete with customizable background covers. Led the development and integration of backend, frontend, and Shopify app components for the entire project. Directed a team of four developers in creation and integration of the app on Shopify. Reviewed pull requests to ensure code quality and adherence to project standards. Made critical architectural decisions and led sprint planning sessions with the client.",
+      "Led a team of 4 developers, overseeing backend development and deployment processes. Integrated international shipment SDKs into the backend for global order fulfillment. Integrated Shopify APIs, webhooks and multiple international delivery shipment SDKs. Reviewed pull requests for frontend and backend to ensure smooth deployment and code quality. Managed complete project lifecycle from planning to deployment and maintenance.",
     technologies:
-      "React JS, Node JS, MongoDB, Shipment APIs, Shopify App integration",
+      "React.js, Node.js, MongoDB, Shipment APIs, Shopify App Integration",
     link: "https://glostudio.design/",
   },
   {
-    name: "Kinfolk",
+    name: "Score (NeverOffside) Football Platform",
     company: "Aurora Solutions",
     description:
-      "Kinfolk, an Antler-funded project, revolutionizes employee experience platforms for HR/People teams, enhancing their impact throughout the employee lifecycle. Developed the Google Calendar Meeting feature to support various time zones and user slot availability. Deployed the back-end of this feature using Lambda functions and created the complex UI challenges with CSS.",
+      "Developed and integrated new features for both web and mobile (Android) applications. Completely redesigned Android application interface, migrating from legacy UI to modern user experience. Shifted the whole Android app from old to new user interface with improved performance. Integrated Stripe payment services, SMS notifications, and AWS SQS messaging for real-time updates. Collaborated with development teams to ensure seamless integration and deployment processes.",
     technologies:
-      "React, Node, AWS App Sync, DynamoDB, GraphQL, AWS Lambda Functions",
-    link: "https://www.kinfolkhq.com/",
+      "React.js, Node.js, GraphQL, PostgreSQL, Native Android (Kotlin)",
+    link: "https://neveroffside.com/",
   },
   {
-    name: "Score (NeverOffside)",
+    name: "DFS Army Betting Platform",
     company: "Aurora Solutions",
     description:
-      "Score is a football club management platform that organizes events and matches, shares news via SMS and Email, and supports web, native Android, and iOS apps. Responsible for development and integration of new features for both the web and mobile applications (Android). Integrated SMS, Email, and Stripe.",
+      "Developed Python scripts to automate mathematical operations in Excel and migrated all data from Excel to AWS DynamoDB. Led frontend development with Angular and successfully completed the full integration process. Reviewed pull requests for frontend and backend to ensure smooth deployment and code quality. Implemented data migration strategies and optimized database performance for high-volume transactions. Collaborated with cross-functional teams to deliver comprehensive betting platform solutions.",
     technologies:
-      "React Js, Node Js, GraphQL, Postgres, Native android (Kotlin)",
-    link: "https://neveroffside.com/",
+      "Angular, Node.js, PostgreSQL, Python, AWS DynamoDB",
+    link: "https://dfsarmy.com/",
   },
 ]}
 
