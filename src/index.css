@@ -1,0 +1,294 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500&display=swap');
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: #020817;
+    color: #e2e8f0;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: rgba(59, 130, 246, 0.3);
+    color: #f8fafc;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0a0f1e;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #3b82f6, #8b5cf6);
+    border-radius: 3px;
+  }
+}
+
+@layer components {
+  .section-heading {
+    @apply text-4xl md:text-5xl font-bold text-center mb-4;
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6, #06b6d4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .section-subheading {
+    @apply text-center text-slate-400 text-lg mb-16 max-w-2xl mx-auto;
+  }
+
+  .card-glass {
+    @apply rounded-2xl border border-slate-700/50;
+    background: linear-gradient(135deg, rgba(15, 32, 64, 0.8), rgba(13, 27, 46, 0.9));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-300;
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    color: white;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-300 border border-slate-600;
+    color: #e2e8f0;
+    background: transparent;
+  }
+
+  .btn-secondary:hover {
+    @apply border-blue-500;
+    background: rgba(59, 130, 246, 0.1);
+    transform: translateY(-2px);
+  }
+
+  .tech-badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium border;
+    background: rgba(59, 130, 246, 0.1);
+    border-color: rgba(59, 130, 246, 0.3);
+    color: #93c5fd;
+  }
+
+  .skill-tag {
+    @apply inline-flex items-center px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-200;
+    background: rgba(30, 64, 175, 0.15);
+    border: 1px solid rgba(59, 130, 246, 0.25);
+    color: #93c5fd;
+  }
+
+  .skill-tag:hover {
+    background: rgba(59, 130, 246, 0.25);
+    border-color: rgba(59, 130, 246, 0.5);
+    transform: translateY(-1px);
+  }
+}
+
+/* ── Animated gradient background ── */
+.hero-bg {
+  background: linear-gradient(-45deg, #020817, #0d1b2e, #0a0f1e, #071224);
+  background-size: 400% 400%;
+  animation: gradientBG 12s ease infinite;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ── Floating orbs ── */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.15;
+  animation: float 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.orb-blue {
+  background: radial-gradient(circle, #3b82f6, transparent);
+  animation-delay: 0s;
+}
+
+.orb-purple {
+  background: radial-gradient(circle, #8b5cf6, transparent);
+  animation-delay: -3s;
+}
+
+.orb-cyan {
+  background: radial-gradient(circle, #06b6d4, transparent);
+  animation-delay: -6s;
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -30px) scale(1.05); }
+  66% { transform: translate(-20px, 20px) scale(0.95); }
+}
+
+/* ── Particle dots ── */
+.particles {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: rgba(147, 197, 253, 0.4);
+  border-radius: 50%;
+  animation: twinkle 4s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.5); }
+}
+
+/* ── Animated gradient text ── */
+.gradient-text {
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6, #06b6d4);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: textGradient 4s linear infinite;
+}
+
+@keyframes textGradient {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+/* ── Section reveal animation ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Timeline ── */
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -1px;
+  top: 24px;
+  bottom: -24px;
+  width: 2px;
+  background: linear-gradient(to bottom, #3b82f6, transparent);
+}
+
+.timeline-item:last-child::before {
+  display: none;
+}
+
+/* ── Project card hover ── */
+.project-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 60px rgba(59, 130, 246, 0.2);
+}
+
+/* ── Navbar ── */
+.navbar-scrolled {
+  background: rgba(2, 8, 23, 0.95) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(59, 130, 246, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* ── Input focus glow ── */
+.input-glow:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+/* ── Typing cursor ── */
+.typing-cursor::after {
+  content: '|';
+  display: inline-block;
+  color: #3b82f6;
+  animation: blink 1s step-end infinite;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* ── Progress bar animation ── */
+.progress-bar-fill {
+  animation: fillBar 1.5s ease forwards;
+  transform-origin: left;
+}
+
+@keyframes fillBar {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+/* ── Glow on hover ── */
+.glow-on-hover:hover {
+  box-shadow: 0 0 30px rgba(59, 130, 246, 0.4), 0 0 60px rgba(139, 92, 246, 0.2);
+}
+
+/* ── Certification badge ── */
+.cert-badge {
+  background: linear-gradient(135deg, rgba(30,64,175,0.2), rgba(109,40,217,0.2));
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  transition: all 0.3s ease;
+}
+
+.cert-badge:hover {
+  background: linear-gradient(135deg, rgba(30,64,175,0.35), rgba(109,40,217,0.35));
+  border-color: rgba(59, 130, 246, 0.6);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 40px rgba(59, 130, 246, 0.25);
+}
+
+/* ── Mobile menu ── */
+.mobile-menu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.mobile-menu.open {
+  max-height: 400px;
+}

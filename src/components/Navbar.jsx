@@ -1,121 +1,145 @@
-import React, { useState } from "react";
-import { useScrollPosition } from "../hooks/useScrollPosition";
-import useResizeObserver from "../hooks/useResizeObserver";
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
-import { mainBody, repos, about, skills } from "../editable-stuff/config.js";
-import { NavLink } from "./home/migration";
+import React, { useState, useEffect } from "react";
 
-const Navigation = React.forwardRef((props, ref) => {
-  // const { showBlog, FirstName } = config;
-  const [isTop, setIsTop] = useState(true);
-  const [scrollPosition, setScrollPosition] = useState(0);
-  const navbarMenuRef = React.useRef();
-  const navbarDimensions = useResizeObserver(navbarMenuRef);
-  const navBottom = navbarDimensions ? navbarDimensions.bottom : 0;
-  useScrollPosition(
-    ({ prevPos, currPos }) => {
-      if (!navbarDimensions) return;
-      currPos.y + ref.current.offsetTop - navbarDimensions.bottom > 5
-        ? setIsTop(true)
-        : setIsTop(false);
-      setScrollPosition(currPos.y);
-    },
-    [navBottom]
-  );
+const navLinks = [
+  { label: "About", href: "#about" },
+  { label: "Skills", href: "#skills" },
+  { label: "Experience", href: "#experience" },
+  { label: "Projects", href: "#projects" },
+  { label: "Certifications", href: "#certifications" },
+  { label: "Blog", href: "#blog" },
+  { label: "Contact", href: "#contact" },
+];
 
-  React.useEffect(() => {
-    if (!navbarDimensions) return;
-    navBottom - scrollPosition >= ref.current.offsetTop
-      ? setIsTop(false)
-      : setIsTop(true);
-  }, [navBottom, navbarDimensions, ref, scrollPosition]);
+const Navbar = () => {
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
+
+  useEffect(() => {
+    const onScroll = () => {
+      setScrolled(window.scrollY > 50);
+      const sections = ["home", "about", "skills", "experience", "projects", "certifications", "blog", "contact"];
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const el = document.getElementById(sections[i]);
+        if (el && window.scrollY >= el.offsetTop - 120) {
+          setActiveSection(sections[i]);
+          break;
+        }
+      }
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const handleNavClick = (e, href) => {
+    e.preventDefault();
+    setMenuOpen(false);
+    const id = href.replace("#", "");
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
-    <Navbar
-      ref={navbarMenuRef}
-      className="px-3 fixed-top navbar-transparent"
-      expand="lg"
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        scrolled ? "navbar-scrolled" : "bg-transparent"
+      }`}
     >
-      <Navbar.Brand className="navbar-brand" href={process.env.PUBLIC_URL + "/#home"}>
-        {`${mainBody.firstName}`}
-      </Navbar.Brand>
-      
-      {/* Social Media Icons - Desktop */}
-      <div className="navbar-social-icons d-none d-lg-flex">
-        {mainBody.icons.map((icon, index) => (
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16">
+          {/* Logo */}
           <a
-            key={index}
-            href={icon.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="navbar-social-icon"
-            aria-label={icon.image.replace('fa-', '')}
+            href="#home"
+            onClick={(e) => handleNavClick(e, "#home")}
+            className="flex items-center gap-2"
           >
-            <i className={`fab ${icon.image}`}></i>
+            <div
+              className="w-9 h-9 rounded-lg flex items-center justify-center text-white font-bold text-sm"
+              style={{ background: "linear-gradient(135deg, #3b82f6, #8b5cf6)" }}
+            >
+              MU
+            </div>
+            <span className="font-bold text-white text-lg hidden sm:block">
+              Muhammad{" "}
+              <span className="gradient-text">Uzair</span>
+            </span>
           </a>
-        ))}
-      </div>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" className="toggler" />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="navbar-nav mr-auto">
-          {/* {
-            <NavLink className="nav-item lead">
-              <Link to={process.env.PUBLIC_URL + "/blog"}>Blog</Link>
-            </NavLink>
-          } */}
-          {repos.show && (
 
-            <NavLink
-              href={process.env.PUBLIC_URL + "/#projects"}
-            >
-              Projects
-            </NavLink>
-          )}
-          <NavLink
-            className="nav-item lead"
-            href={about.resume}
-            target="_blank"
-            rel="noreferrer noopener"
-          >
-            Resume
-          </NavLink>
-          {about.show && (
-            <NavLink
-              className="nav-item lead"
-              href={process.env.PUBLIC_URL + "/#aboutme"}
-            >
-              About
-            </NavLink>
-          )}
-          {skills.show && (
-            <NavLink
-              className="nav-item lead"
-              href={process.env.PUBLIC_URL + "/#skills"}
-            >
-              Skills
-            </NavLink>
-          )}
-        </Nav>
-        
-        {/* Mobile Social Icons */}
-        <div className="navbar-social-icons d-lg-none">
-          {mainBody.icons.map((icon, index) => (
+          {/* Desktop nav */}
+          <div className="hidden md:flex items-center gap-1">
+            {navLinks.map((link) => {
+              const isActive = activeSection === link.href.replace("#", "");
+              return (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  onClick={(e) => handleNavClick(e, link.href)}
+                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                    isActive
+                      ? "text-blue-400 bg-blue-500/10"
+                      : "text-slate-300 hover:text-white hover:bg-white/5"
+                  }`}
+                >
+                  {link.label}
+                </a>
+              );
+            })}
             <a
-              key={index}
-              href={icon.url}
+              href="https://docs.google.com/document/d/10jziF7Qbd_P1SlF8JJDSCX3u6hbQyzb70Kfwi7mhu7o/edit?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
-              className="navbar-social-icon"
-              aria-label={icon.image.replace('fa-', '')}
+              className="btn-primary ml-2 !py-2 !px-4 text-sm"
             >
-              <i className={`fab ${icon.image}`}></i>
+              <i className="fas fa-file-alt text-xs"></i>
+              Resume
             </a>
-          ))}
-        </div>
-      </Navbar.Collapse>
-    </Navbar>
-  );
-});
+          </div>
 
-export default Navigation;
+          {/* Hamburger */}
+          <button
+            className="md:hidden p-2 rounded-lg text-slate-300 hover:text-white hover:bg-white/5 transition"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle menu"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              {menuOpen ? (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              ) : (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              )}
+            </svg>
+          </button>
+        </div>
+
+        {/* Mobile menu */}
+        <div className={`mobile-menu md:hidden ${menuOpen ? "open" : ""}`}>
+          <div className="py-4 space-y-1 border-t border-slate-700/50">
+            {navLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                onClick={(e) => handleNavClick(e, link.href)}
+                className="block px-4 py-3 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 transition"
+              >
+                {link.label}
+              </a>
+            ))}
+            <div className="px-4 pt-2">
+              <a
+                href="https://docs.google.com/document/d/10jziF7Qbd_P1SlF8JJDSCX3u6hbQyzb70Kfwi7mhu7o/edit?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary w-full justify-center text-sm"
+              >
+                <i className="fas fa-file-alt text-xs"></i>
+                Resume
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;
