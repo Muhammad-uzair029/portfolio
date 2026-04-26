@@ -73,12 +73,6 @@ const Hero = () => {
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        {/* Status badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-green-500/30 bg-green-500/10 text-green-400 text-sm font-medium mb-8">
-          <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-          Available for new opportunities
-        </div>
-
         {/* Name */}
         <h1 className="text-5xl sm:text-7xl lg:text-8xl font-black text-white mb-4 leading-tight tracking-tight">
           Muhammad{" "}
